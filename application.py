@@ -3,7 +3,7 @@ import boto3
 import json
 from flask import Flask, request, render_template, jsonify
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 # Configure AWS credentials and region
 region = 'us-east-2'  # Make sure this matches your SageMaker endpoint region
@@ -27,4 +27,4 @@ def predict():
     return jsonify(result)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    application.run(debug=True, host='0.0.0.0', port=8080)
